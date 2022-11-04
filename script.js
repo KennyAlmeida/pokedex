@@ -1,11 +1,15 @@
-function getPokemon (){
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=151')
+var paginacao = 0;
+
+
+function getPokemon (paginacao){
+    fetch(`https://pokeapi.co/api/v2/pokemon/?limit=30&offset=${paginacao}`)
     .then(response => response.json())
     .then(data => {
         console.log(data.results);
         criarCardPokemon(data.results);
     })
 }
+
 
 async function fetchExam(url) {
     try {
@@ -19,7 +23,7 @@ async function fetchExam(url) {
         console.error(error);
     }
 }
-getPokemon();
+getPokemon(paginacao);
 
 
 function criarCardPokemon(pokemon){
@@ -56,7 +60,9 @@ function criarCardPokemon(pokemon){
 
         
 
-        fetchExam(url).then((data) => {
+          fetchExam(url).then((data) => {
+
+            console.log(data);
             
             const nomePokemon = data.name;
             const nomePokemonMaiscula = nomePokemon[0].toUpperCase() + nomePokemon.substr(1);
@@ -110,29 +116,46 @@ function criarCardPokemon(pokemon){
 
             container.innerHTML += `
 
-            <div class="card-container ${tipo}">
-                <div class="id">
-                    <p>#${data.id}</p>
+            <div class="card-container ${tipo} flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front ${tipo}">
+                    <div class="id">
+                        <p>#${data.id}</p>
+                    </div>
+            
+                    <div class="card-body">
+                        <img src="${data.sprites.front_default}" class="card-img-top" alt="${nomePokemonMaiscula}" title="${nomePokemonMaiscula}">
+                        <h2 class="card-title">${nomePokemonMaiscula}</h2>
+                    </div>
                 </div>
-                
-                <div class="card-body">
-                    <img src="${data.sprites.front_default}" class="card-img-top" alt="${nomePokemonMaiscula}" title="${nomePokemonMaiscula}">
-                    <h2 class="card-title">${nomePokemonMaiscula}</h2>
+
+                <div class="flip-card-back ${tipo}-back">
+                    <h2>${nomePokemonMaiscula}</h2>
                 </div>
             </div>
+            </div>
+
             `;
             
             containerPokemon.innerHTML += `
 
-            <div class="card-container ${tipo}">
-                <div class="id">
-                    <p>#${data.id}</p>
+            <div class="card-container ${tipo} flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front ${tipo}">
+                    <div class="id">
+                        <p>#${data.id}</p>
+                    </div>
+            
+                    <div class="card-body">
+                        <img src="${data.sprites.front_default}" class="card-img-top" alt="${nomePokemonMaiscula}" title="${nomePokemonMaiscula}">
+                        <h2 class="card-title">${nomePokemonMaiscula}</h2>
+                    </div>
                 </div>
-                
-                <div class="card-body">
-                    <img src="${data.sprites.front_default}" class="card-img-top" alt="${nomePokemonMaiscula}" title="${nomePokemonMaiscula}">
-                    <h2 class="card-title">${nomePokemonMaiscula}</h2>
+
+                <div class="flip-card-back ${tipo}-back">
+                    <h2>${nomePokemonMaiscula}</h2>
                 </div>
+            </div>
             </div>
             `;
 
@@ -141,8 +164,30 @@ function criarCardPokemon(pokemon){
 
     });
 
+    let btn = document.createElement('div');
+    btn.className = 'd-flex';
+
+    btn.innerHTML += `
+        <button class="btn btn-primary" id="btn-mais">Carregar mais</button>
+    `;
+
+    if(paginacao == 0){
+        document.querySelector('#pokemons').appendChild(btn);
+    }
+
+    
+
+
 
 }
+
+setTimeout(function(){
+    document.querySelector('#btn-mais').addEventListener('click', function(){
+        paginacao += 30;
+        getPokemon(paginacao);
+    });
+}, 1000);
+
 
 
 function tiposPokemons(evt, cityName) {

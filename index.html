@@ -16,7 +16,7 @@
             background-color: rgba(0, 128, 0, 0.5);
             border: green 1px solid;
         }
-        .grass:hover{
+        .grass-back{
             transition: 1s;
             background-color: rgba(0, 128, 0, 0.7);
         }
@@ -25,7 +25,7 @@
             background-color: rgba(255, 0, 0, 0.5);
             border: red 1px solid;
         }
-        .fire:hover{
+        .fire-back{
             transition: 1s;
             background-color: rgba(255, 0, 0, 0.7);
         }
@@ -34,7 +34,7 @@
             background-color: rgba(0, 0, 255, 0.5);
             border: blue 1px solid;
         }
-        .water:hover{
+        .water-back{
             transition: 1s;
             background-color: rgba(0, 0, 255, 0.7);
         }
@@ -43,7 +43,7 @@
             background-color: rgba(0, 128, 0, 0.5);
             border: green 1px solid;
         }
-        .bug:hover{
+        .bug-back{
             transition: 1s;
             background-color: rgba(0, 128, 0, 0.7);
         }
@@ -52,7 +52,7 @@
             background-color: rgba(255, 166, 0, 0.5);
             border: orange 1px solid;
         }
-        .normal:hover{
+        .normal-back{
             transition: 1s;
             background-color: rgba(255, 166, 0, 0.7);
         }
@@ -61,7 +61,7 @@
             background-color: rgba(128, 0, 128, 0.5);
             border: purple 1px solid;
         }
-        .poison:hover{
+        .poison-back{
             transition: 1s;
             background-color: rgba(128, 0, 128, 0.7);
         }
@@ -70,7 +70,7 @@
             background-color: rgba(255, 255, 0, 0.5);
             border: yellow 1px solid;
         }
-        .electric:hover{
+        .electric-back{
             transition: 1s;
             background-color: rgba(255, 255, 0, 0.7);
         }
@@ -79,7 +79,7 @@
             background-color: rgba(128, 64, 0, 0.5);
             border: brown 1px solid;
         }
-        .ground:hover{
+        .ground-back{
             transition: 1s;
             background-color: rgba(128, 64, 0, 0.7);
         }
@@ -87,7 +87,7 @@
             background-color: rgba(255, 0, 255, 0.5);
             border: pink 1px solid;
         }
-        .fairy:hover{
+        .fairy-back{
             transition: 1s;
             background-color: rgba(255, 0, 255, 0.7);
         }
@@ -96,7 +96,7 @@
             background-color: rgba(128, 0, 0, 0.5);
             border: red 1px solid;
         }
-        .fighting:hover{
+        .fighting-back{
             transition: 1s;
             background-color: rgba(128, 0, 0, 0.7);
         }
@@ -104,7 +104,7 @@
             background-color: rgba(255, 0, 255, 0.5);
             border: pink 1px solid;
         }
-        .psychic:hover{
+        .psychic-back{
             transition: 1s;
             background-color: rgba(255, 0, 255, 0.7);
         }
@@ -113,7 +113,7 @@
             background-color: rgba(128, 128, 128, 0.5);
             border: gray 1px solid;
         }
-        .rock:hover{
+        .rock-back{
             transition: 1s;
             background-color: rgba(128, 128, 128, 0.7);
         }
@@ -123,7 +123,7 @@
             background-color: rgba(128, 0, 255, 0.5);
             border: purple 1px solid;
         }
-        .ghost:hover{
+        .ghost-back{
             transition: 1s;
             background-color: rgba(128, 0, 255, 0.7);
         }
@@ -132,7 +132,7 @@
             background-color: rgba(0, 255, 255, 0.5);
             border: cyan 1px solid;
         }
-        .ice:hover{
+        .ice-back{
             transition: 1s;
             background-color: rgba(0, 255, 255, 0.7);
         }
@@ -141,7 +141,7 @@
             background-color: rgba(0, 0, 128, 0.5);
             border: blue 1px solid;
         }
-        .dragon:hover{
+        .dragon-back{
             transition: 1s;
             background-color: rgba(0, 0, 128, 0.7);
         }
@@ -150,7 +150,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             border: black 1px solid;
         }
-        .dark:hover{
+        .dark-back{
             transition: 1s;
             background-color: rgba(0, 0, 0, 0.7);
         }
@@ -159,7 +159,7 @@
             background-color: rgba(128, 128, 128, 0.5);
             border: gray 1px solid;
         }
-        .steel:hover{
+        .steel-back{
             transition: 1s;
             background-color: rgba(128, 128, 128, 0.7);
         }
@@ -168,7 +168,7 @@
             background-color: rgba(128, 128, 255, 0.5);
             border: blue 1px solid;
         }
-        .flying:hover{
+        .flying-back{
             transition: 1s;
             background-color: rgba(128, 128, 255, 0.7);
         }
@@ -176,7 +176,6 @@
         .container-pokemon {
         display: grid; 
         grid-template-columns: 1fr 1fr 1fr 1fr; 
-        grid-template-rows: 2fr 2fr 2fr 2fr; 
         gap: 10px 15px;
         grid-template-areas: 
             ". . . ."
@@ -213,6 +212,27 @@
             font-weight: 600;
             font-size: 18px;
         }
+
+        #btn-mais{
+            padding: 10px 20px;
+            color: black;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #btn-mais:hover{
+            background-color: black;
+            color: white;
+            transition: 0.5s;
+            
+        }
+
+        .d-flex{
+            display: flex;
+            justify-content: center;
+        }
         /* Style the tab */
         .tab {
         overflow: hidden;
@@ -248,6 +268,67 @@
         border: 1px solid #ccc;
         border-top: none;
         }
+
+
+        .flip-card {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card-back h2{
+    margin-top: 30px;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
     </style>
 </head>
 <body>
