@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrapper {
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+        .grass{
+            background-color: rgba(0, 128, 0, 0.5);
+            border: green 1px solid;
+        }
+        .grass:hover{
+            transition: 1s;
+            background-color: rgba(0, 128, 0, 0.7);
+        }
+
+        .fire{
+            background-color: rgba(255, 0, 0, 0.5);
+            border: red 1px solid;
+        }
+        .fire:hover{
+            transition: 1s;
+            background-color: rgba(255, 0, 0, 0.7);
+        }
+
+        .water{
+            background-color: rgba(0, 0, 255, 0.5);
+            border: blue 1px solid;
+        }
+        .water:hover{
+            transition: 1s;
+            background-color: rgba(0, 0, 255, 0.7);
+        }
+
+        .bug{
+            background-color: rgba(0, 128, 0, 0.5);
+            border: green 1px solid;
+        }
+        .bug:hover{
+            transition: 1s;
+            background-color: rgba(0, 128, 0, 0.7);
+        }
+
+        .normal{
+            background-color: rgba(255, 166, 0, 0.5);
+            border: orange 1px solid;
+        }
+        .normal:hover{
+            transition: 1s;
+            background-color: rgba(255, 166, 0, 0.7);
+        }
+
+        .poison{
+            background-color: rgba(128, 0, 128, 0.5);
+            border: purple 1px solid;
+        }
+        .poison:hover{
+            transition: 1s;
+            background-color: rgba(128, 0, 128, 0.7);
+        }
+
+        .electric{
+            background-color: rgba(255, 255, 0, 0.5);
+            border: yellow 1px solid;
+        }
+        .electric:hover{
+            transition: 1s;
+            background-color: rgba(255, 255, 0, 0.7);
+        }
+        
+        .ground{
+            background-color: rgba(128, 64, 0, 0.5);
+            border: brown 1px solid;
+        }
+        .ground:hover{
+            transition: 1s;
+            background-color: rgba(128, 64, 0, 0.7);
+        }
+        .fairy{
+            background-color: rgba(255, 0, 255, 0.5);
+            border: pink 1px solid;
+        }
+        .fairy:hover{
+            transition: 1s;
+            background-color: rgba(255, 0, 255, 0.7);
+        }
+
+        .fighting{
+            background-color: rgba(128, 0, 0, 0.5);
+            border: red 1px solid;
+        }
+        .fighting:hover{
+            transition: 1s;
+            background-color: rgba(128, 0, 0, 0.7);
+        }
+        .psychic{
+            background-color: rgba(255, 0, 255, 0.5);
+            border: pink 1px solid;
+        }
+        .psychic:hover{
+            transition: 1s;
+            background-color: rgba(255, 0, 255, 0.7);
+        }
+
+        .rock{
+            background-color: rgba(128, 128, 128, 0.5);
+            border: gray 1px solid;
+        }
+        .rock:hover{
+            transition: 1s;
+            background-color: rgba(128, 128, 128, 0.7);
+        }
+
+
+        .ghost{
+            background-color: rgba(128, 0, 255, 0.5);
+            border: purple 1px solid;
+        }
+        .ghost:hover{
+            transition: 1s;
+            background-color: rgba(128, 0, 255, 0.7);
+        }
+
+        .ice{
+            background-color: rgba(0, 255, 255, 0.5);
+            border: cyan 1px solid;
+        }
+        .ice:hover{
+            transition: 1s;
+            background-color: rgba(0, 255, 255, 0.7);
+        }
+
+        .dragon{
+            background-color: rgba(0, 0, 128, 0.5);
+            border: blue 1px solid;
+        }
+        .dragon:hover{
+            transition: 1s;
+            background-color: rgba(0, 0, 128, 0.7);
+        }
+
+        .dark{
+            background-color: rgba(0, 0, 0, 0.5);
+            border: black 1px solid;
+        }
+        .dark:hover{
+            transition: 1s;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .steel{
+            background-color: rgba(128, 128, 128, 0.5);
+            border: gray 1px solid;
+        }
+        .steel:hover{
+            transition: 1s;
+            background-color: rgba(128, 128, 128, 0.7);
+        }
+
+        .flying{
+            background-color: rgba(128, 128, 255, 0.5);
+            border: blue 1px solid;
+        }
+        .flying:hover{
+            transition: 1s;
+            background-color: rgba(128, 128, 255, 0.7);
+        }
+
+        .container-pokemon {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 2fr 2fr 2fr 2fr; 
+        gap: 10px 15px;
+        grid-template-areas: 
+            ". . . ."
+            ". . . ."
+            ". . . ."; 
+        }
+
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            justify-content: space-around;
+            height: 350px;
+            font-family: monospace;
+        }
+
+        .card-container img {
+            width: 125px;
+            height: 125px;
+        }
+
+        .card-container h2 {
+            font-size: 25px;
+            margin: 0;
+            text-align: center;
+            font-weight: 500;
+           
+        }
+
+        .id p{
+            font-weight: 600;
+            font-size: 18px;
+        }
+        /* Style the tab */
+        .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+        background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+        background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+
+    <h1>Lista de Pokemons</h1>
+
+    <div class="tab">
+        <button class="tablinks" onclick="tiposPokemons(event, 'pokemons')" id="defaultOpen">Todos</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'grass')">Grama</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'fire')">Fogo</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'water')">Água</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'bug')">Inseto</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'normal')">Normal</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'poison')">Venenoso</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'electric')">Elétrico</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'ground')">Terra</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'fairy')">Fada</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'fighting')">Lutador</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'psychic')">Psíquico</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'rock')">Pedra</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'ghost')">Fantasma</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'ice')">Gelo</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'dragon')">Dragão</button>
+        <!-- <button class="tablinks" onclick="tiposPokemons(event, 'dark')">Sombrio</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'steel')">Aço</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'flying')">Voador</button>
+        <button class="tablinks" onclick="tiposPokemons(event, 'shadow')">Fantasma</button> -->
+
+    </div>
+      
+      <!-- Tab content -->
+      <div id="pokemons" class="tabcontent">
+        <div class="container-pokemon">
+
+        </div>
+        
+      </div>
+      
+      <div id="grass" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+      </div>
+      
+      <div id="fire" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+      </div>
+
+      <div id="water" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+      </div>
+
+      <div id="bug" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+      </div>
+
+      <div id="normal" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="poison" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="electric" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="ground" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="fairy" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="fighting" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="psychic" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="rock" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="ghost" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="ice" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="dragon" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <!-- <div id="dark" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="steel" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="flying" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+
+    <div id="shadow" class="tabcontent">
+        <div class="container-pokemon">
+            
+        </div>
+    </div>
+    
+ -->
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
